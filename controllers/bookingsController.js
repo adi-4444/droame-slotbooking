@@ -64,10 +64,6 @@ exports.updateCustomerBookingById = async (req, res) => {
       if (!booking) {
          return res.status(404).json({ message: 'Booking not found' });
       }
-      // Check if the customer ID has been changed
-      if (booking.customer_id !== req.params.customerId) {
-         return res.status(400).json({ message: 'Customer ID cannot be changed' });
-      }
       res.json({ message: 'Booking updated successfully', booking });
    } catch (err) {
       console.error(err);
@@ -141,8 +137,6 @@ exports.updateBookingById = async (req, res) => {
       res.status(500).json({ message: err.message });
    }
 };
-
-
 
 // Delete an existing booking by ID
 exports.deleteBookingById = async (req, res) => {

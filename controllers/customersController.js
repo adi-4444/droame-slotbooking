@@ -39,7 +39,7 @@ exports.getCustomerById = async (req, res) => {
       res.status(200).json(customer);
    } catch (err) {
       console.error(err);
-      res.status(500).json({ message: 'Something went wrong' });
+      res.status(500).json({ message: 'Something went wrong' },);
    }
 };
 
@@ -67,6 +67,7 @@ exports.updateCustomerById = async (req, res) => {
    }
 };
 
+
 // Delete an existing customer by ID
 exports.deleteCustomerById = async (req, res) => {
    try {
@@ -74,7 +75,7 @@ exports.deleteCustomerById = async (req, res) => {
       if (!customer) {
          return res.status(404).json({ message: 'Customer not found' });
       }
-      await customer.remove();
+      await customer.deleteOne();
       res.json({ message: 'Customer deleted' });
    } catch (err) {
       console.error(err);

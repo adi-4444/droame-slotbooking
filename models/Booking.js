@@ -14,6 +14,14 @@ const bookingSchema = new mongoose.Schema({
       type: String,
       required: true,
    },
+   start_time: {
+      type: String,
+      required: true,
+   },
+   end_time: {
+      type: String,
+      required: true,
+   },
    created_time: {
       type: Date,
       default: Date.now,
