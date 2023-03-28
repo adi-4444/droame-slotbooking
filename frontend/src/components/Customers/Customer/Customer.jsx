@@ -28,11 +28,11 @@ const Customer = () => {
 		setLoading(true);
 		const res = await createBookingById(id, newData);
 		const { data, status } = res;
-		console.log(data.message);
-		console.log(data.newBooking);
 		if (status === 201) {
 			setIsOpen(false);
 			fetchData();
+			console.log(data.message);
+			console.log(data.newBooking);
 		}
 	};
 	return (

@@ -30,3 +30,12 @@ export const createBookingById = async (id, data) => {
       return error
    }
 }
+export const createCustomer = async (data) => {
+   const URL = `/api/v1/customers`
+   try {
+      const customerData = await axios.post(URL, data)
+      return customerData
+   } catch (error) {
+      return error
+   }
+}
