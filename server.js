@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 const connectDB = require('./config/database');
 const customersRouter = require('./routes/customers');
 const bookingsRouter = require('./routes/bookings');
+const path = require('path')
 require('./config/database');
 
 const app = express();
@@ -13,10 +14,19 @@ dotenv.config()
 connectDB()
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-   res.send("Hello")
-})
-
+//-------------------Deployment-----------------
+// __dirname = path.resolve()
+// if (process.env.NODE_ENV === "production") {
+//    app.use(express.static(path.join(__dirname, '/frontend/dist')))
+//    app.get('*', (req, res) => {
+//       res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
+//    })
+// } else {
+//    app.get("/", (req, res) => {
+//       res.send("Hello")
+//    })
+// }
+//-------------------Deployment-----------------
 app.use('/api/v1/customers', customersRouter);
 app.use('/api/v1/bookings', bookingsRouter);
 

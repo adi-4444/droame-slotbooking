@@ -30,10 +30,46 @@ export const createBookingById = async (id, data) => {
       return error
    }
 }
+export const editBookingById = async (c_id, b_id, data) => {
+   const URL = `/api/v1/bookings/customer/${c_id}/${b_id}`
+   try {
+      const bookingData = await axios.put(URL, data)
+      return bookingData
+   } catch (error) {
+      return error
+   }
+}
+export const deleteBookingById = async (c_id, b_id) => {
+   const URL = `/api/v1/bookings/customer/${c_id}/${b_id}`
+   try {
+      const bookingData = await axios.delete(URL)
+      return bookingData
+   } catch (error) {
+      return error
+   }
+}
 export const createCustomer = async (data) => {
    const URL = `/api/v1/customers`
    try {
       const customerData = await axios.post(URL, data)
+      return customerData
+   } catch (error) {
+      return error
+   }
+}
+export const editCustomerById = async (c_id, data) => {
+   const URL = `/api/v1/customers/${c_id}`
+   try {
+      const customerData = await axios.put(URL, data)
+      return customerData
+   } catch (error) {
+      return error
+   }
+}
+export const deleteCustomerById = async (id) => {
+   const URL = `/api/v1/customers/${id}`
+   try {
+      const customerData = await axios.delete(URL)
       return customerData
    } catch (error) {
       return error
