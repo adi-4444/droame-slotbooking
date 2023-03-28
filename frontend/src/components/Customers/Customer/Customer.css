@@ -1,0 +1,53 @@
+.customer-data {
+	background-color: #fff;
+	color: black;
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+}
+p {
+	margin: 0.5em;
+}
+.customer-bookings {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3rem;
+	margin-top: 2rem;
+}
+.customer-booking {
+	background-color: #fff;
+	color: black;
+	width: 350px;
+}
+.booking-icons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 300px;
+	margin: auto;
+	padding: 10px;
+}
+.edit {
+	height: 30px;
+	width: 30px;
+	background-size: cover;
+	cursor: pointer;
+	background-image: url("../../../assets/edit.png");
+	background-color: #fff;
+}
+.delete {
+	height: 30px;
+	width: 30px;
+	background-size: cover;
+	cursor: pointer;
+	background-image: url("../../../assets/remove.png");
+	background-color: #fff;
+}
+
+.edit:hover {
+	background-image: url("../../../assets/edit.gif");
+}
+.delete:hover {
+	background-image: url("../../../assets/remove.gif");
+}

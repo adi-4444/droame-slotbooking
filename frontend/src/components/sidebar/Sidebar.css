@@ -1,0 +1,22 @@
+.sidebar-component {
+	flex: 1;
+	background: #2d3d6a;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+}
+.sidebar-Links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 1rem;
+}
+.sidebar-Links a {
+	color: rgb(230, 227, 227);
+	text-decoration: none;
+	font-size: larger;
+}
